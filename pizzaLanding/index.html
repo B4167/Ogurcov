@@ -1,54 +1,132 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Пиццерия СЫТЫЙ МАРИО</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- normalize должен быть первым -->
+    <link rel="stylesheet" href="css/normalize.css" />
+
+    <!-- главный файл со стилями -->
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body class="body">
 
     <header class="body__header header">
       <div class="header__container container">
-      </div>
+
+  <div class="header__logo">СЫТЫЙ МАРИО</div>
+
+  <nav class="header__nav">
+    <a href="#cover" class="header__link">Главная</a>
+    <a href="#menu" class="header__link">Меню</a>
+    <a href="#chips" class="header__link">Фишечки</a>
+    <a href="#interior" class="header__link">Интерьер</a>
+    <a href="#reviews" class="header__link">Отзывы</a>
+    <a href="#reservation" class="header__link">Бронь</a>
+  </nav>
+
+</div>
+
     </header>
 
     <main class="body__main main">
 
       <!-- cover -->
-      <section id="cover" class="main__section cover">
-        <div class="main__section-container container">
-        </div>
-      </section>
+<section id="cover" class="main__section cover">
+  <div class="main__section-container container">
+
+    <div class="cover__content">
+      <h1 class="cover__title">СЫТЫЙ МАРИО</h1>
+      <p class="cover__subtitle">Лучшая пицца — здесь и сейчас</p>
+      <a href="#menu" class="cover__btn">Смотреть меню</a>
+    </div>
+
+  </div>
+</section>
+
+
 
       <!-- menu -->
-      <section id="menu" class="main__section menu">
-        <div class="main__section-container container">
+<section id="menu" class="main__section menu">
+  <div class="main__section-container container">
 
-          <header class="main__section-header menu__header">
-            <h2 class="main__section-header-text">Меню</h2>
-            <p class="main__section-text">Вкус просто сводит с ума (И это не лечится)</p>
-          </header>
+    <header class="main__section-header menu__header">
+      <h2 class="main__section-header-text">Меню</h2>
+      <p class="main__section-text">Вкус просто сводит с ума (И это не лечится)</p>
+    </header>
 
-          <div class="main__section-block"></div>
+    <div class="main__section-block">
 
+      <div class="menu__items">
+
+        <div class="menu__item shadow-out">
+          <img src="img/pizza-1.jpg" alt="Пицца" class="menu__img">
+          <h3 class="menu__name">Пепперони</h3>
+          <p class="menu__desc">Острая пепперони и сыр моцарелла</p>
+          <div class="menu__price">550 ₽</div>
         </div>
-      </section>
 
-      <!-- chips -->
-      <section id="chips" class="main__section chips">
-        <div class="main__section-container container">
-
-          <header class="main__section-header">
-            <h2 class="main__section-header-text">Фишечки</h2>
-            <p class="main__section-text">Чем мы лучше остальных? Чем-то то и лучше!</p>
-          </header>
-
-          <div class="main__section-block"></div>
-
+        <div class="menu__item shadow-out">
+          <img src="img/pizza-2.jpg" alt="Пицца" class="menu__img">
+          <h3 class="menu__name">4 сыра</h3>
+          <p class="menu__desc">Пармезан, дор-блю, моцарелла, чеддер</p>
+          <div class="menu__price">490 ₽</div>
         </div>
-      </section>
+
+        <div class="menu__item shadow-out">
+          <img src="img/pizza-3.jpg" alt="Пицца" class="menu__img">
+          <h3 class="menu__name">Маргарита</h3>
+          <p class="menu__desc">Томаты, базилик, оливковое масло</p>
+          <div class="menu__price">450 ₽</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- chips -->
+<section id="chips" class="main__section chips">
+  <div class="main__section-container container">
+
+    <header class="main__section-header">
+      <h2 class="main__section-header-text">Фишечки</h2>
+      <p class="main__section-text">Чем мы лучше остальных? Чем-то то и лучше!</p>
+    </header>
+
+    <div class="main__section-block">
+      <div class="chips__items">
+
+        <div class="chips__item shadow-out">
+          <img src="img/icon-1.png" alt="icon" class="chips__icon">
+          <h3 class="chips__title">Настоящая итальянская печь</h3>
+          <p class="chips__desc">Готовим на дровах — вкус получается особенный.</p>
+        </div>
+
+        <div class="chips__item shadow-out">
+          <img src="img/icon-2.png" alt="icon" class="chips__icon">
+          <h3 class="chips__title">Лучшие ингредиенты</h3>
+          <p class="chips__desc">Только свежие продукты — никаких компромиссов.</p>
+        </div>
+
+        <div class="chips__item shadow-out">
+          <img src="img/icon-3.png" alt="icon" class="chips__icon">
+          <h3 class="chips__title">Быстрая доставка</h3>
+          <p class="chips__desc">Привезём горячую пиццу за 30 минут.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
       <!-- interior -->
       <section id="interior" class="main__section interior">
@@ -61,9 +139,18 @@
             </p>
           </header>
 
-          <div class="main__section-block"></div>
+          <div class="main__section-block">
 
-        </div>
+  <div class="interior__gallery">
+
+    <img src="img/interior-1.jpg" alt="Интерьер" class="interior__img">
+    <img src="img/interior-2.jpg" alt="Интерьер" class="interior__img">
+    <img src="img/interior-3.jpg" alt="Интерьер" class="interior__img">
+
+  </div>
+
+</div>
+
       </section>
 
       <!-- reviews -->
@@ -75,9 +162,101 @@
             <p class="main__section-text">Наши клиенты – лучшие... И их отзывы – прекрасны!</p>
           </header>
 
-          <div class="main__section-block"></div>
+          <div class="main__section-block">
 
-        </div>
+  <div class="reviews__list">
+
+    <!-- 1 -->
+    <div class="review">
+      <img src="img/rev-1.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Анна</h3>
+        <span class="review__date">12.02.2024</span>
+        <p class="review__text">Очень вкусная пицца! Буду заказывать ещё ❤️</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="review">
+      <img src="img/rev-2.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Егор</h3>
+        <span class="review__date">03.03.2024</span>
+        <p class="review__text">Доставка быстрая, всё горячее, отменная Маргарита.</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="review">
+      <img src="img/rev-3.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Мария</h3>
+        <span class="review__date">28.02.2024</span>
+        <p class="review__text">Интерьер шикарный, атмосфера топ!</p>
+      </div>
+    </div>
+
+    <!-- Остальные 6 отзывов — скрытые при загрузке -->
+    <div class="review hidden">
+      <img src="img/rev-4.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Иван</h3>
+        <span class="review__date">10.01.2024</span>
+        <p class="review__text">Сырная пицца просто бомба! Всем советую.</p>
+      </div>
+    </div>
+
+    <div class="review hidden">
+      <img src="img/rev-5.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Света</h3>
+        <span class="review__date">14.03.2024</span>
+        <p class="review__text">Очень вежливые официанты и уютный зал.</p>
+      </div>
+    </div>
+
+    <div class="review hidden">
+      <img src="img/rev-6.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Фёдор</h3>
+        <span class="review__date">07.03.2024</span>
+        <p class="review__text">Пицца огромная и вкусная, цена вообще огонь.</p>
+      </div>
+    </div>
+
+    <div class="review hidden">
+      <img src="img/rev-7.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Катя</h3>
+        <span class="review__date">05.03.2024</span>
+        <p class="review__text">Быстрая доставка и приятные цены!</p>
+      </div>
+    </div>
+
+    <div class="review hidden">
+      <img src="img/rev-8.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Олег</h3>
+        <span class="review__date">22.02.2024</span>
+        <p class="review__text">Лучшая пицца в городе, честно!</p>
+      </div>
+    </div>
+
+    <div class="review hidden">
+      <img src="img/rev-9.jpg" class="review__img" alt="">
+      <div class="review__content">
+        <h3 class="review__name">Натали</h3>
+        <span class="review__date">01.03.2024</span>
+        <p class="review__text">Просто вау. Рекомендую каждому!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <button id="reviews__toggle" class="reviews__btn">Показать ещё</button>
+
+</div>
+
       </section>
 
       <!-- reservation -->
@@ -97,5 +276,7 @@
       </section>
 
     </main>
+    
+    <script src="js/reviews.js"></script>
   </body>
 </html>

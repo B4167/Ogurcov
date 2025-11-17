@@ -1,2 +1,72 @@
-.reviews {
+.reviews__list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.review {
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.review:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.review__img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 18px;
+}
+
+.review__content {
+    flex: 1;
+}
+
+.review__name {
+    font-family: "Open Sans 700";
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.review__date {
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+.review__text {
+    margin-top: 10px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* скрытые отзывы */
+.hidden {
+    display: none;
+}
+
+/* кнопка */
+.reviews__btn {
+    margin: 30px auto 0;
+    display: block;
+    padding: 12px 28px;
+    font-size: 16px;
+    background: var(--color-basic-2);
+    color: #fff;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.reviews__btn:hover {
+    background: var(--color-basic-2_special-1);
 }

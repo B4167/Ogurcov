@@ -1,0 +1,17 @@
+
+:root {
+    --color-basic-1: rgba(19, 36, 80, 1);
+    --color-basic-1_special-1: rgba(19, 36, 80, 0.5);
+    --color-basic-1_special-2: rgba(19, 36, 80, 0.8);
+
+    --color-basic-2: rgba(208, 166, 22, 1);
+    --color-basic-2_special-1: rgba(208, 166, 22, 0.5);
+    --color-basic-2_special-2: rgba(208, 166, 22, 0.3);
+
+    --color-basic-3: rgba(255, 239, 202, 1);
+    --color-basic-3_special-1: rgba(255, 239, 202, 0.5);
+
+    --color-basic-4: rgba(186, 191, 249, 1);
+    --color-basic-5: #00b38a;
+    --color-basic-6: #5f3000;
+}

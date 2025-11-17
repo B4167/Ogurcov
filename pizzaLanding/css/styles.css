@@ -1,3 +1,13 @@
+/* normalize */
+@import "normalize.css";
+
+/* переменные */
+@import "variables.css";
+@import "colors.css";
+
+/* шрифты */
+@import "fonts-v2.css";
+
 /* глобальные стили */
 @import "globalStyles.css";
 

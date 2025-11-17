@@ -1,4 +1,42 @@
-/* глобальные стили проекта */
-.container {
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 0;
+    letter-spacing: 1px;
+    color: inherit;
+}
 
+/* Глобальные стили */
+html {
+    font-size: 14px;
+    font-family: "Open Sans Regular", sans-serif;
+    color: var(--color-basic-1);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Контейнер */
+.container {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Тень */
+.shadow-out {
+    -webkit-box-shadow: 0 3px 5px 0 var(--color-basic-1_special-1);
+    -moz-box-shadow: 0 3px 5px 0 var(--color-basic-1_special-1);
+    box-shadow: 0 3px 5px 0 var(--color-basic-1_special-1);
 }

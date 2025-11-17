@@ -18,3 +18,7 @@
 
 .main__section-block {
 }
+
+.main__section {
+    padding-top: var(--header-height);
+}
