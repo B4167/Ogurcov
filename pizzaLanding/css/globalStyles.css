@@ -40,3 +40,10 @@ ul {
     -moz-box-shadow: 0 3px 5px 0 var(--color-basic-1_special-1);
     box-shadow: 0 3px 5px 0 var(--color-basic-1_special-1);
 }
+
+/* -------------media---------------- */
+@media screen and (max-width: 1920px) {
+    html {
+        font-size: var(--page-font-size-html);
+    }
+}

@@ -1,3 +1,33 @@
 :root {
     --header-height: 100px;
+
+    /* ----------Адаптивный размер текста----------------- */
+    --page-width: 100vw;
+    --page-width-default-px: 1920px;
+    --page-width-default: 1920;
+
+    --page-width-adaptive-px: 320px;
+    --page-width-adaptive: 320;
+
+    /* page min fs */
+    --page-font-size-min-px: 7px;
+    --page-font-size-min: 7;
+
+    /* page default font-size */
+    --page-font-size-default-px: 14px;
+    --page-font-size-default: 14;
+
+    /* page default font-size calculated: */
+    --page-font-size-html: calc(
+        var(--page-font-size-min-px) + (var(--page-font-size-default) - var(--page-font-size-min)) *
+        ((var(--page-width) - var(--page-width-adaptive-px)) /
+        (var(--page-width-default) - var(--page-width-adaptive)))
+    );
+}
+
+/* ------media-------- */
+@media screen and (max-width: 1280px) {
+    :root {
+        --header-height: 72px;
+    }
 }

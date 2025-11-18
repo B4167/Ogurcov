@@ -1,24 +1,118 @@
+/* ========= БАЗА ========= */
+
 .main {
+    width: 100%;
 }
 
+/* каждая секция */
 .main__section {
+    min-height: 100vh;
+    padding-top: var(--header-height);   /* отступ под фиксированный header */
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
+/* контейнер */
 .main__section-container {
+    display: flex;
+    flex-direction: column;   /* ВАЖНО! У тебя всегда сверху заголовок */
+    align-items: center;
+    width: 100%;
 }
+
+/* ========= ЗАГОЛОВОК СЕКЦИИ ========= */
 
 .main__section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 2rem;
+
+    position: sticky;
+    top: var(--header-height);
+    z-index: 20;
+
+    padding: 1rem;
+    background: rgba(255,255,255,0.7);   /* мягкий фон под липким заголовком */
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
 }
 
+/* текст заголовка */
 .main__section-header-text {
+    font-size: 3rem;
+    font-family: "Open Sans 600", sans-serif;
 }
 
+/* подзаголовок */
 .main__section-text {
+    margin-top: 0.7rem;
+    font-size: 1.4rem;
+    font-family: "Open Sans italic", sans-serif;
+    opacity: 0.9;
 }
+
+/* ========= КОНТЕНТНЫЙ БЛОК СЕКЦИИ ========= */
 
 .main__section-block {
+    width: 100%;
+    max-width: 1400px; /* чуть шире, чтобы меню/фишки не были узкими */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    position: relative;
 }
 
-.main__section {
-    padding-top: var(--header-height);
+
+/* ========= АДАПТИВ ========= */
+
+/* ноутбуки и маленькие мониторы */
+@media screen and (max-width: 1280px) {
+
+    .main__section {
+        min-height: auto;    /* секции больше НЕ обязаны быть 100vh */
+        padding-bottom: var(--header-height);
+    }
+
+    .main__section-header {
+        position: relative;   /* sticky отключаем */
+        top: 0;
+        margin-bottom: 3rem;
+        background: transparent;
+        backdrop-filter: none;
+    }
+}
+
+/* планшеты */
+@media screen and (max-width: 1000px) {
+    .main__section-header-text {
+        font-size: 2.8rem;
+    }
+    .main__section-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* мобильные */
+@media screen and (max-width: 768px) {
+    .main__section-header-text {
+        font-size: 2.3rem;
+    }
+    .main__section-text {
+        font-size: 1.7rem;
+    }
+}
+
+/* маленькие телефоны */
+@media screen and (max-width: 420px) {
+    .main__section-header-text {
+        font-size: 2rem;
+    }
+    .main__section-text {
+        font-size: 1.8rem;
+    }
 }
