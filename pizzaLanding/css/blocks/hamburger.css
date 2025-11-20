@@ -1,0 +1,37 @@
+/* БАЗА */
+.hamburger {
+  display: none; /* скроем по умолчанию */
+  width: 26px;
+  height: 18px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+.hamburger__row {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-basic-1);
+  transition: 0.3s ease;
+}
+
+/* АКТИВАЦИЯ БУРГЕРА */
+.hamburger_active .hamburger__row:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger_active .hamburger__row:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger_active .hamburger__row:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* АДАПТИВ — бургер показывается */
+@media screen and (max-width: 1000px) {
+  .hamburger {
+    display: flex;
+  }
+}

@@ -1,53 +1,53 @@
-/* Open Sans Regular (400) */
+/* Regular 400 */
 @font-face {
     font-display: swap;
-    font-family: "Open Sans Regular";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/OpenSans/open-sans-v44-cyrillic_latin-regular.woff2") format("woff2");
+    src: url("../fonts/OpenSans/open-sans-400.woff2") format("woff2");
 }
 
-/* Open Sans Italic (400 italic) */
+/* Italic 400 */
 @font-face {
     font-display: swap;
-    font-family: "Open Sans Italic";
+    font-family: "Open Sans";
     font-style: italic;
     font-weight: 400;
-    src: url("../fonts/OpenSans/open-sans-v44-cyrillic_latin-italic.woff2") format("woff2");
+    src: url("../fonts/OpenSans/open-sans-400italic.woff2") format("woff2");
 }
 
-/* Open Sans 600 */
+/* 600 */
 @font-face {
     font-display: swap;
-    font-family: "Open Sans 600";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 600;
-    src: url("../fonts/OpenSans/open-sans-v44-cyrillic_latin-600.woff2") format("woff2");
+    src: url("../fonts/OpenSans/open-sans-600.woff2") format("woff2");
 }
 
-/* Open Sans 600 Italic */
+/* 600 italic */
 @font-face {
     font-display: swap;
-    font-family: "Open Sans 600 Italic";
+    font-family: "Open Sans";
     font-style: italic;
     font-weight: 600;
-    src: url("../fonts/OpenSans/open-sans-v44-cyrillic_latin-600italic.woff2") format("woff2");
+    src: url("../fonts/OpenSans/open-sans-600italic.woff2") format("woff2");
 }
 
-/* Open Sans 700 */
+/* 700 */
 @font-face {
     font-display: swap;
-    font-family: "Open Sans 700";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
-    src: url("../fonts/OpenSans/open-sans-v44-cyrillic_latin-700.woff2") format("woff2");
+    src: url("../fonts/OpenSans/open-sans-700.woff2") format("woff2");
 }
 
-/* Open Sans 700 Italic */
+/* 700 italic */
 @font-face {
     font-display: swap;
-    font-family: "Open Sans 700 Italic";
+    font-family: "Open Sans";
     font-style: italic;
     font-weight: 700;
-    src: url("../fonts/OpenSans/open-sans-v44-cyrillic_latin-700italic.woff2") format("woff2");
+    src: url("../fonts/OpenSans/open-sans-700italic.woff2") format("woff2");
 }

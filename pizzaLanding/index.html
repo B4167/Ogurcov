@@ -23,23 +23,81 @@
 
   <body class="body">
 
-    <header class="body__header header">
-      <div class="header__container container">
+<header class="js-body__header body__header header shadow-out">
+  <div class="header__container container">
 
-  <div class="header__logo">СЫТЫЙ МАРИО</div>
+    <!-- LOGO -->
+    <a class="header__logo-container" href="/">
+      <div class="header__logo">
+        <img src="img/logo/logo-mario.svg" alt="Сытый Марио логотип" />
+      </div>
+      <p class="header__logo-text">СЫТЫЙ МАРИО</p>
+    </a>
 
-  <nav class="header__nav">
-    <a href="#cover" class="header__link">Главная</a>
-    <a href="#menu" class="header__link">Меню</a>
-    <a href="#chips" class="header__link">Фишечки</a>
-    <a href="#interior" class="header__link">Интерьер</a>
-    <a href="#reviews" class="header__link">Отзывы</a>
-    <a href="#reservation" class="header__link">Бронь</a>
-  </nav>
+    <!-- CONTACTS -->
+    <div class="header__contacts-container">
 
-</div>
+      <!-- PHONE -->
+      <a class="header__telephone" href="tel:88005553535">
+        <div class="header__telephone-back"></div>
+        <span class="header__telephone-text">8-800-555-35-35</span>
+      </a>
 
-    </header>
+      <!-- ADDRESS -->
+      <a class="header__address" href="https://yandex.ru/maps/-/CDbHA0ky">
+        <div class="header__address-back"></div>
+        <span class="header__address-text">Москва, ул. Ленина, д11</span>
+      </a>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="header__nav">
+      <ul class="js-nav-list nav-list nav-list_hided">
+
+        <li class="js-nav-list__item nav-list__item">
+          <a class="nav-list__item-link" href="#cover">Главная</a>
+          <div class="nav-list__item-back nav-list__item-back_1"></div>
+        </li>
+
+        <li class="js-nav-list__item nav-list__item">
+          <a class="nav-list__item-link" href="#menu">Меню</a>
+          <div class="nav-list__item-back nav-list__item-back_2"></div>
+        </li>
+
+        <li class="js-nav-list__item nav-list__item">
+          <a class="nav-list__item-link" href="#chips">Фишечки</a>
+          <div class="nav-list__item-back nav-list__item-back_3"></div>
+        </li>
+
+        <li class="js-nav-list__item nav-list__item">
+          <a class="nav-list__item-link" href="#interior">Интерьер</a>
+          <div class="nav-list__item-back nav-list__item-back_4"></div>
+        </li>
+
+        <li class="js-nav-list__item nav-list__item">
+          <a class="nav-list__item-link" href="#reviews">Отзывы</a>
+          <div class="nav-list__item-back nav-list__item-back_5"></div>
+        </li>
+
+        <li class="js-nav-list__item nav-list__item">
+          <a class="nav-list__item-link" href="#reservation">Бронь</a>
+          <div class="nav-list__item-back nav-list__item-back_1"></div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- BURGER -->
+    <div class="js-hamburger header__hamburger hamburger">
+      <div class="hamburger__row"></div>
+      <div class="hamburger__row"></div>
+      <div class="hamburger__row"></div>
+    </div>
+
+  </div>
+</header>
+
 
     <main class="body__main main">
 

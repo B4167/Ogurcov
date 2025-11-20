@@ -1,46 +1,118 @@
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
-    background: var(--color-basic-3);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* ХЕДЕР — основной блок */
+.body__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-basic-3);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.4s ease;
 }
 
-/* Контейнер хедера */
+/* скрытие хедера при скролле */
+.body__header_hided {
+  transform: translateY(-100%);
+}
+
+/* контейнер */
 .header__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
-/* ЛОГО */
-.header__logo {
-    font-family: "Open Sans 700";
-    font-size: 24px;
-    color: var(--color-basic-1);
-    letter-spacing: 1px;
+/* LOGO */
+.header__logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-/* НАВИГАЦИЯ */
+.header__logo img {
+  height: 52px;
+}
+
+.header__logo-text {
+  font-family: "Open Sans 700";
+  font-size: 1.8rem;
+  color: var(--color-basic-1);
+}
+
+/* CONTACTS */
+.header__contacts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.header__telephone, 
+.header__address {
+  position: relative;
+  padding: 4px 8px;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.header__telephone-text,
+.header__address-text {
+  font-family: "Open Sans 600";
+  font-size: 1.2rem;
+  color: var(--color-basic-1);
+}
+
+.header__telephone-back,
+.header__address-back {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-basic-4);
+  z-index: -1;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.header__telephone:hover .header__telephone-back,
+.header__address:hover .header__address-back {
+  opacity: 1;
+}
+
+/* NAV */
 .header__nav {
-    display: flex;
-    gap: 32px;
+  display: flex;
+  align-items: center;
 }
 
-/* ССЫЛКИ */
-.header__link {
-    font-family: "Open Sans 600";
-    font-size: 16px;
-    color: var(--color-basic-1);
-    transition: 0.3s;
+/* BURGER */
+.header__hamburger {
+  display: none;
+  cursor: pointer;
 }
 
-.header__link:hover {
-    color: var(--color-basic-2);
+.header__hamburger .hamburger__row {
+  background-color: var(--color-basic-1);
+}
+
+/* АДАПТИВ */
+@media screen and (max-width: 1280px) {
+  .header__contacts-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header__hamburger {
+    display: block;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+  }
 }
