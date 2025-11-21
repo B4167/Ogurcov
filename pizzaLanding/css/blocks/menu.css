@@ -1,0 +1,66 @@
+.menu {
+    background-color: var(--color-basic-3);
+}
+
+/* Контейнер меню */
+.menu__section-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Вкладки */
+.menu__nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.menu__nav-item {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.7rem;
+    font-family: "Open Sans 600", sans-serif;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.menu__nav-item:hover,
+.menu__nav-item_active {
+    border-bottom-color: var(--color-basic-2);
+}
+
+/* Контейнер списков */
+.menu__menu-items-block {
+    width: 100%;
+    position: relative;
+    min-height: 420px; /* FIX: выравнивание высоты */
+}
+
+/* Список карточек (активный) */
+.menu__menu-items-list {
+    width: 100%;
+    padding: 20px 10px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 40px;
+
+    transition: 0.6s ease-in-out;
+    opacity: 1;
+}
+
+/* Список скрыт */
+.menu__menu-items-list_hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}

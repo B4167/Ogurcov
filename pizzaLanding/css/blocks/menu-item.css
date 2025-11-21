@@ -1,0 +1,101 @@
+.menu-item {
+    width: 300px;
+    background: transparent;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 40px;
+
+    cursor: pointer;
+    transition: 0.35s ease;
+}
+
+.menu-item:hover {
+    background-color: var(--color-basic-2);
+}
+
+/* Контейнер для изображения */
+.menu-item__img-container {
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.menu-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+/* Анимация картинки */
+.menu-item:hover .menu-item__img {
+    animation: slow-rotating 3s ease infinite alternate;
+}
+
+/* Блок с текстом */
+.menu-item__info-block {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 3px solid var(--color-basic-2);
+    border-radius: 10px;
+
+    position: relative;
+}
+
+/* Название */
+.menu-item__name {
+    font-family: "Open Sans 600 Italic";
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Описание */
+.menu-item__composition {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+/* Цена */
+.menu-item__price {
+    background-color: var(--color-basic-2);
+    color: #fff;
+    padding: 6px 18px;
+
+    font-size: 1.4rem;
+    border-radius: 10px;
+
+    position: absolute;
+    bottom: -18px;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .menu-item {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        width: 85%;
+    }
+}

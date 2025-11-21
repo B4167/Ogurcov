@@ -1,7 +1,10 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Пиццерия СЫТЫЙ МАРИО</title>
+
 
   <!-- favicon -->
   <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
@@ -114,48 +117,31 @@
   </div>
 </section>
 
-
-
-      <!-- menu -->
+       <!-- menu -->
 <section id="menu" class="main__section menu">
-  <div class="main__section-container main__section-container_reverse container">
+  <div class="main__section-container container">
 
     <header class="main__section-header menu__header">
       <h2 class="main__section-header-text">Меню</h2>
       <p class="main__section-text">Вкус просто сводит с ума (И это не лечится)</p>
     </header>
 
-    <div class="main__section-block">
+    <div class="main__section-block menu__section-block">
 
-      <div class="menu__items">
+      <ul class="menu__nav-list">
+        <li class="js-menu__nav-item menu__nav-item" data-menu-list-id="0">Пицца</li>
+        <li class="js-menu__nav-item menu__nav-item" data-menu-list-id="1">Салаты</li>
+        <li class="js-menu__nav-item menu__nav-item" data-menu-list-id="2">Напитки</li>
+      </ul>
 
-        <div class="menu__item shadow-out">
-          <img src="img/pizza-1.jpg" alt="Пицца" class="menu__img">
-          <h3 class="menu__name">Пепперони</h3>
-          <p class="menu__desc">Острая пепперони и сыр моцарелла</p>
-          <div class="menu__price">550 ₽</div>
-        </div>
-
-        <div class="menu__item shadow-out">
-          <img src="img/pizza-2.jpg" alt="Пицца" class="menu__img">
-          <h3 class="menu__name">4 сыра</h3>
-          <p class="menu__desc">Пармезан, дор-блю, моцарелла, чеддер</p>
-          <div class="menu__price">490 ₽</div>
-        </div>
-
-        <div class="menu__item shadow-out">
-          <img src="img/pizza-3.jpg" alt="Пицца" class="menu__img">
-          <h3 class="menu__name">Маргарита</h3>
-          <p class="menu__desc">Томаты, базилик, оливковое масло</p>
-          <div class="menu__price">450 ₽</div>
-        </div>
-
-      </div>
+      <div class="js-menu__menu-items-block menu__menu-items-block"></div>
 
     </div>
 
   </div>
 </section>
+
+
 
 <!-- chips -->
 <section id="chips" class="main__section chips">
