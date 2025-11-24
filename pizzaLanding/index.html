@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Пиццерия СЫТЫЙ МАРИО</title>
@@ -15,12 +16,17 @@
   <!-- главный файл со стилями -->
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+
   <!-- scripts -->
   <script src="js/slider-reviews.js" defer></script>
   <script src="js/collage.js" defer></script>
   <script src="js/menu.js" defer></script>
   <script src="js/header.js" defer></script>
   <script src="js/reviews.js" defer></script>
+  <script src="js/scroll-animations.js" defer></script>
 
 </head>
 
@@ -144,42 +150,75 @@
 
 
 <!-- chips -->
-<section id="chips" class="main__section chips">
-  <div class="main__section-container container">
+<section id="chips" class="main__section chips parallax parallax_cute">
+
+  <!-- полупрозрачная маска поверх фона -->
+  <div class="parallax__mask parallax__mask_special-1"></div>
+
+  <div class="main__section-container container parallax__main">
 
     <header class="main__section-header">
       <h2 class="main__section-header-text">Фишечки</h2>
-      <p class="main__section-text">Чем мы лучше остальных? Чем-то то и лучше!</p>
+      <p class="main__section-text">
+        Чем мы лучше остальных? Да просто лучше!
+      </p>
     </header>
 
-    <div class="main__section-block">
-      <div class="chips__items">
+    <!-- Блок с фишками -->
+    <div class="main__section-block chips__chips-items-block">
 
-        <div class="chips__item shadow-out">
-          <img src="img/icon-1.png" alt="icon" class="chips__icon">
-          <h3 class="chips__title">Настоящая итальянская печь</h3>
-          <p class="chips__desc">Готовим на дровах — вкус получается особенный.</p>
+      <!-- 1 -->
+      <div class="chip-item">
+        <div class="chip-item__icon-container">
+          <span class="chip-item__icon material-symbols-outlined">landscape</span>
         </div>
-
-        <div class="chips__item shadow-out">
-          <img src="img/icon-2.png" alt="icon" class="chips__icon">
-          <h3 class="chips__title">Лучшие ингредиенты</h3>
-          <p class="chips__desc">Только свежие продукты — никаких компромиссов.</p>
-        </div>
-
-        <div class="chips__item shadow-out">
-          <img src="img/icon-3.png" alt="icon" class="chips__icon">
-          <h3 class="chips__title">Быстрая доставка</h3>
-          <p class="chips__desc">Привезём горячую пиццу за 30 минут.</p>
-        </div>
-
+        <p class="chip-item__text">
+          <span class="chip-item__main-text">Шикарное местоположение</span>
+          <br>
+          Напротив входа — лес смерти, позади — живописный химзавод!
+        </p>
       </div>
+
+      <!-- 2 -->
+      <div class="chip-item">
+        <div class="chip-item__icon-container">
+          <span class="chip-item__icon material-symbols-outlined">restaurant</span>
+        </div>
+        <p class="chip-item__text">
+          <span class="chip-item__main-text">Наша пицца — самая нажористая!</span>
+          <br>
+          Зайдёте тощим — выкатитесь круглым!
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="chip-item">
+        <div class="chip-item__icon-container">
+          <span class="chip-item__icon material-symbols-outlined">cake</span>
+        </div>
+        <p class="chip-item__text">
+          <span class="chip-item__main-text">Ваш праздник — наш праздник!</span>
+          <br>
+          Каждому имениннику — восковая пицца с фитилями!
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="chip-item">
+        <div class="chip-item__icon-container">
+          <span class="chip-item__icon material-symbols-outlined">savings</span>
+        </div>
+        <p class="chip-item__text">
+          <span class="chip-item__main-text">Копите Марио-коины!</span>
+          <br>
+          И просто хвастайтесь бессмысленным капиталом!
+        </p>
+      </div>
+
     </div>
 
   </div>
 </section>
-
-
 
       <!-- interior -->
       <section id="interior" class="main__section interior">
@@ -324,9 +363,58 @@
             </p>
           </header>
 
-          <div class="main__section-block"></div>
+<div class="main__section-block">
 
+  <!-- Декоративные элементы -->
+  <img src="img/decor/leaf-1.png" alt="" class="reservation__decor reservation__decor_1">
+  <img src="img/decor/leaf-2.png" alt="" class="reservation__decor reservation__decor_2">
+
+  <!-- Карточка бронирования -->
+  <div class="reservation__card reservation__card_animated">
+
+    <h3 class="reservation__title">Забронируйте столик</h3>
+    <p class="reservation__subtitle">
+      Мы свяжемся с вами в течение 2 минут ❤️
+    </p>
+
+    <form class="reservation__form">
+
+      <div class="reservation__field">
+        <label>Ваше имя</label>
+        <input type="text" placeholder="Например: Антон" required>
+      </div>
+
+      <div class="reservation__field">
+        <label>Телефон</label>
+        <input type="tel" placeholder="+7 999 123 45 67" required>
+      </div>
+
+      <div class="reservation__row">
+        <div class="reservation__field">
+          <label>Дата</label>
+          <input type="date" required>
         </div>
+
+        <div class="reservation__field">
+          <label>Время</label>
+          <input type="time" required>
+        </div>
+      </div>
+
+      <div class="reservation__field">
+        <label>Количество гостей</label>
+        <input type="number" min="1" max="20" placeholder="2" required>
+      </div>
+
+      <button class="reservation__btn" type="submit">
+        Забронировать
+      </button>
+
+    </form>
+
+  </div>
+</div>
+
       </section>
 
     </main>

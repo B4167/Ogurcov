@@ -1,0 +1,134 @@
+/* ======================================================================
+   TYPOGRAPHY — единый текстовый стиль сайта
+   ====================================================================== */
+
+/* Базовые настройки текста */
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--color-basic-1);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* ----------------------------
+   Глобальные размеры шрифтов
+   ---------------------------- */
+:root {
+    --font-size-base: 1rem;          /* обычный текст */
+    --font-size-small: 0.9rem;       /* мелкий */
+    --font-size-large: 1.2rem;       /* чуть крупнее */
+    --font-size-title: 3rem;         /* крупные заголовки */
+    --font-size-subtitle: 1.4rem;    /* подзаголовки */
+    --font-size-button: 1.1rem;      /* кнопки */
+}
+
+/* ----------------------------
+   Заголовки
+   ---------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans 700", sans-serif;
+    line-height: 1.22;
+    margin: 0 0 1rem 0;
+    color: var(--color-basic-1);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* h1 — крупные акцентные (например на cover) */
+h1 {
+    font-size: var(--font-size-title);
+    font-weight: 700;
+}
+
+/* h2 — заголовки секций */
+h2 {
+    font-size: 2.4rem;
+}
+
+/* h3 — заголовки карточек, отзывов, меню */
+h3 {
+    font-size: 1.6rem;
+}
+
+/* Подзаголовки */
+.subtitle {
+    font-family: "Open Sans 400 italic";
+    font-size: var(--font-size-subtitle);
+    opacity: 0.9;
+}
+
+/* ----------------------------
+   Обычный текст
+   ---------------------------- */
+
+p {
+    font-size: var(--font-size-base);
+    margin-bottom: 1rem;
+    color: var(--color-basic-1);
+}
+
+/* Специальный текст под описание */
+.text-muted {
+    opacity: 0.75;
+    font-size: 0.95rem;
+    color: #6d6142;
+}
+
+/* ----------------------------
+   Ссылки
+   ---------------------------- */
+
+a {
+    color: var(--color-basic-1);
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+a:hover {
+    color: var(--color-basic-6);
+}
+
+/* ----------------------------
+   Списки
+   ---------------------------- */
+
+ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.55;
+}
+
+/* ----------------------------
+   Кнопки
+   ---------------------------- */
+
+button, .btn {
+    font-family: "Open Sans 700";
+    font-size: var(--font-size-button);
+}
+
+/* ----------------------------
+   Адаптив
+   ---------------------------- */
+
+@media (max-width: 1000px) {
+    :root {
+        --font-size-title: 2.4rem;
+        --font-size-subtitle: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-title: 2rem;
+        --font-size-subtitle: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-title: 1.7rem;
+        --font-size-subtitle: 1.4rem;
+    }
+}

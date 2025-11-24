@@ -8,26 +8,29 @@
 /* шрифты */
 @import "fonts-v2.css";
 
+/* типографика */
+@import "typography.css";
+
 /* глобальные стили */
 @import "globalStyles.css";
 
-/* блоки */
+/* блоки (из css/blocks/) */
 @import "blocks/body.css";
 @import "blocks/header.css";
 @import "blocks/main.css";
+@import "blocks/hamburger.css";
+@import "blocks/nav-list.css";
+@import "blocks/chip-item.css";
+@import "blocks/chips.css";
+@import "blocks/parallax.css";
+@import "blocks/menu.css";
+@import "blocks/menu-item.css";
 
-/* секции */
+/* секции (из css/blocks/sections/) */
 @import "blocks/sections/cover.css";
-@import "blocks/sections/chips.css";
 @import "blocks/sections/interior.css";
 @import "blocks/sections/reviews.css";
 @import "blocks/sections/reservation.css";
-@import "blocks/hamburger.css";
-@import "blocks/nav-list.css";
 
 /* анимации */
 @import "animations.css";
-
-@import "blocks/menu.css";        
-@import "blocks/menu-item.css";
-

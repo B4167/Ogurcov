@@ -1,2 +1,177 @@
+/* ===========
+   RESERVATION 
+   =========== */
+
 .reservation {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 246, 225, 1) 0%,
+        rgba(255, 235, 190, 1) 100%
+    );
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+/* ----- ДЕКОР (пицца листья/базилик/орегано) ----- */
+
+.reservation__decor {
+    position: absolute;
+    width: 160px;
+    opacity: 0.4;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+    user-select: none;
+    pointer-events: none;
+
+    animation: slowFloat 6s ease-in-out infinite alternate;
+}
+
+.reservation__decor_1 {
+    top: 30px;
+    left: -40px;
+}
+
+.reservation__decor_2 {
+    bottom: 50px;
+    right: -30px;
+    animation-delay: 2s;
+}
+
+@keyframes slowFloat {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(14px); }
+}
+
+/* ----- КАРТОЧКА ----- */
+
+.reservation__card {
+    width: 100%;
+    max-width: 620px;
+    margin: 60px auto 0;
+
+    padding: 32px 38px;
+
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 18px;
+
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* появление карточки */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ----- ТЕКСТЫ ----- */
+
+.reservation__title {
+    font-family: "Open Sans 700";
+    font-size: 28px;
+    color: var(--color-basic-1);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.reservation__subtitle {
+    font-family: "Open Sans 400 italic";
+    font-size: 17px;
+    opacity: 0.8;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+/* ----- ФОРМА ----- */
+
+.reservation__form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.reservation__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.reservation__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.reservation__field label {
+    font-size: 15px;
+    font-family: "Open Sans 600";
+    color: var(--color-basic-1);
+}
+
+.reservation__field input {
+    padding: 14px 15px;
+    font-size: 16px;
+
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,0.08);
+
+    background: rgba(255,255,255, 0.7);
+    transition: 0.3s ease;
+
+    font-family: "Open Sans 600";
+}
+
+.reservation__field input:focus {
+    border-color: var(--color-basic-2);
+    box-shadow: 0 0 10px rgba(208,166,22,0.35);
+    outline: none;
+}
+
+/* ----- КНОПКА ----- */
+
+.reservation__btn {
+    margin-top: 10px;
+
+    padding: 14px 32px;
+    font-size: 18px;
+
+    background: linear-gradient(
+        135deg,
+        var(--color-basic-2) 0%,
+        rgba(255, 215, 90, 1) 100%
+    );
+
+    color: #402f00;
+    font-family: "Open Sans 700";
+
+    border-radius: 10px;
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(208,166,22,0.45);
+    transition: 0.25s ease;
+}
+
+.reservation__btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(208,166,22,0.55);
+}
+
+/* ====== Мобильная адаптация ====== */
+
+@media (max-width: 600px) {
+    .reservation__card {
+        padding: 26px 24px;
+    }
+    .reservation__row {
+        grid-template-columns: 1fr;
+    }
+    .reservation__title {
+        font-size: 24px;
+    }
 }

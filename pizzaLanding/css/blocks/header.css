@@ -3,18 +3,30 @@
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
   height: var(--header-height);
-  background-color: var(--color-basic-3);
+
+  background: rgba(255, 248, 230, 0.82); /* мягкий теплый полупрозрачный фон */
+  backdrop-filter: blur(12px);           /* стеклянный эффект */
+
   display: flex;
   align-items: center;
+
   z-index: 1000;
-  transition: transform 0.4s ease;
+  transition: 
+    transform 0.45s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+
+  /* мягкая нижняя тень */
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
 }
 
-/* скрытие хедера при скролле */
+/* красивое скрытие хедера */
 .body__header_hided {
-  transform: translateY(-100%);
+  transform: translateY(calc(-1 * var(--header-height) - 20px));
+  opacity: 0.75;
 }
 
 /* контейнер */
@@ -22,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   height: 100%;
 }
 
@@ -31,16 +44,26 @@
   align-items: center;
   gap: 12px;
   text-decoration: none;
+
+  transition: transform 0.25s ease;
+}
+
+.header__logo-container:hover {
+  transform: scale(1.04);
 }
 
 .header__logo img {
   height: 52px;
+
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
 }
 
 .header__logo-text {
   font-family: "Open Sans 700";
   font-size: 1.8rem;
+
   color: var(--color-basic-1);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* CONTACTS */
@@ -51,12 +74,20 @@
   gap: 4px;
 }
 
-.header__telephone, 
+.header__telephone,
 .header__address {
   position: relative;
-  padding: 4px 8px;
+  padding: 4px 10px;
+
   text-decoration: none;
   z-index: 2;
+
+  transition: transform 0.25s ease;
+}
+
+.header__telephone:hover,
+.header__address:hover {
+  transform: translateY(-2px);
 }
 
 .header__telephone-text,
@@ -70,8 +101,10 @@
 .header__address-back {
   position: absolute;
   inset: 0;
+
   background-color: var(--color-basic-4);
   z-index: -1;
+
   border-radius: 4px;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -96,6 +129,7 @@
 
 .header__hamburger .hamburger__row {
   background-color: var(--color-basic-1);
+  transition: 0.3s ease;
 }
 
 /* АДАПТИВ */

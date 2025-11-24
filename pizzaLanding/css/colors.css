@@ -1,17 +1,30 @@
-
 :root {
-    --color-basic-1: rgba(19, 36, 80, 1);
-    --color-basic-1_special-1: rgba(19, 36, 80, 0.5);
-    --color-basic-1_special-2: rgba(19, 36, 80, 0.8);
+    /* Основной тёмный текст / тени / заголовки */
+    --color-basic-1: #3a2a12;
+    --color-basic-1_special-1: rgba(58, 42, 18, 0.55);
+    --color-basic-1_special-2: rgba(58, 42, 18, 0.75);
 
-    --color-basic-2: rgba(208, 166, 22, 1);
-    --color-basic-2_special-1: rgba(208, 166, 22, 0.5);
-    --color-basic-2_special-2: rgba(208, 166, 22, 0.3);
+    /* Акцент — золотой */
+    --color-basic-2: #d0a616;
+    --color-basic-2_special-1: rgba(208, 166, 22, 0.55);
+    --color-basic-2_special-2: rgba(208, 166, 22, 0.28);
 
-    --color-basic-3: rgba(255, 239, 202, 1);
-    --color-basic-3_special-1: rgba(255, 239, 202, 0.5);
+    /* Светлый теплый кремовый (фон меню, фона секций) */
+    --color-basic-3: #ffefca;
+    --color-basic-3_special-1: rgba(255, 239, 202, 0.55);
 
-    --color-basic-4: rgba(186, 191, 249, 1);
+    /* Мягкий карамельный, заменяет старый синий */
+    --color-basic-4: #e8d4af;
+    --color-basic-4_special-1: rgba(232, 212, 175, 0.45);
+
+    /* Мятный (редко используется, но оставим как акцентный) */
     --color-basic-5: #00b38a;
+
+    /* Глубокий тёмно-кофейный */
     --color-basic-6: #5f3000;
+
+    /* Дополнительные тёплые оттенки для спец-эффектов */
+    --color-warm-glow: rgba(255, 220, 140, 0.55);
+    --color-warm-shadow: rgba(70, 50, 20, 0.25);
+    --color-warm-border: #f1d9a1;
 }

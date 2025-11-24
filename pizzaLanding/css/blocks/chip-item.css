@@ -1,0 +1,108 @@
+/* ==========
+   CHIP ITEM 
+   ==========
+
+/* Контейнер одной фишки */
+.chip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
+
+  margin-top: 1.2rem;
+
+  font-size: 1.25rem;
+  color: #f4d86e; /* мягкий тёплый желтый */
+  
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* первый элемент сверху без отступа */
+.chip-item:nth-child(1) {
+  margin-top: 0;
+}
+
+/* Контейнер иконки */
+.chip-item__icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--color-basic-2) 0%,
+    rgba(255, 215, 90, 1) 100%
+  );
+  
+  box-shadow: 0 4px 12px rgba(0,0,0,0.22);
+  user-select: none;
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Иконка */
+.chip-item__icon {
+  font-size: 2.5em;
+  color: #fff;
+  opacity: 0.95;
+}
+
+/* Текстовый блок */
+.chip-item__text {
+  padding: 0.3rem 0;
+  font-family: "Open Sans 600 italic", sans-serif;
+  line-height: 1.45;
+  max-width: 600px;
+}
+
+/* Основной жирный текст */
+.chip-item__main-text {
+  display: inline-block;
+  margin-bottom: 0.2rem;
+
+  font-family: "Open Sans 700 italic", sans-serif;
+  font-size: 1.15em;
+
+  color: #ffe89b; /* более светлый теплый цвет — акцент */
+}
+
+/* ----- Hover эффект ----- */
+.chip-item:hover .chip-item__icon-container {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+}
+
+.chip-item:hover {
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+/* ======================================================================
+   Адаптив
+   ====================================================================== */
+
+@media screen and (max-width: 1280px) {
+  .chip-item {
+    font-size: 1.45rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .chip-item {
+    font-size: 1.35rem;
+  }
+  .chip-item__icon-container {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chip-item {
+    font-size: 1.6rem;
+    gap: 1.2rem;
+  }
+}
