@@ -1,0 +1,154 @@
+/* ======== COLLLAGE (интерьер) ======== */
+
+.collage {
+  display: grid;
+  gap: 18px;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px;
+
+  grid-template-areas:
+    "box1 box1 box2"
+    "box3 box4 box4";
+}
+
+/* Основной большой блок с фото */
+.collage__view-box {
+  grid-area: box1;
+  background-color: #000;
+}
+
+/* картинка внутри большого блока */
+.collage__view-box-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Блок описания фото */
+.collage__view-textbox {
+  grid-area: box2;
+  background-color: var(--color-basic-3);
+}
+
+/* текст описания */
+.collage__view-text {
+  font-size: 1.3rem;
+}
+
+/* Блок “и другие наши фото” */
+.collage__alt-textbox {
+  grid-area: box3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-basic-2);
+}
+
+/* сам текст “и другие наши фото” */
+.collage__alt-text {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+/* Список миниатюр */
+.collage__collage-items-list {
+  grid-area: box4;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* Общий стиль карточек коллажа */
+.collage-item {
+  overflow: hidden;
+  border-radius: 20px;
+
+  border: 2px solid transparent;
+  transition: 0.3s all ease;
+}
+
+/* Активная (выбранная) миниатюра */
+.collage-item_active {
+  border-color: var(--color-basic-1);
+  opacity: 0.7;
+}
+
+/* Картинка внутри карточки */
+.collage-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 1;
+  transition: 0.3s opacity ease;
+}
+
+/* “Тачабельная” фотка (миниатюра) */
+.collage-item__img_touchable {
+  transition: 0.3s transform ease;
+}
+
+.collage-item__img_touchable:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Общий стиль текстов в блоках коллажа */
+.collage-item__text {
+  padding: 1rem;
+  opacity: 1;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  transition: 0.3s opacity ease;
+}
+
+/* перенос строки в “И другие Наши фото” */
+.collage-item__br {
+  /* на десктопе ничего не делаем */
+}
+
+/* ===== АДАПТИВ ===== */
+
+/* до 1000px — перестраиваем сетку в 3 строки */
+@media screen and (max-width: 1000px) {
+  .collage {
+    grid-template-rows: 40vw auto auto;
+    grid-template-areas:
+      "box1 box1 box1"
+      "box2 box2 box2"
+      "box3 box4 box4";
+  }
+
+  .collage__view-text {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+}
+
+/* до 600px — 4 строки и другая сетка миниатюр */
+@media screen and (max-width: 600px) {
+  .collage {
+    grid-template-rows: 50vw auto auto auto;
+    grid-template-areas:
+      "box1 box1 box1"
+      "box2 box2 box2"
+      "box3 box3 box3"
+      "box4 box4 box4";
+  }
+
+  .collage-item__br {
+    display: none;
+  }
+
+  .collage-item__text {
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 1.8rem;
+  }
+
+  .collage__collage-items-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

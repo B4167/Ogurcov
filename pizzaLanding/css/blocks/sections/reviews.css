@@ -1,6 +1,6 @@
-/* =======
-   REVIEWS 
-   ======= */
+/* ======================================================================
+   REVIEWS — премиальный стиль
+   ====================================================================== */
 
 .reviews__list {
     margin-top: 40px;
@@ -8,35 +8,55 @@
     flex-direction: column;
     gap: 26px;
 
-    padding: 10px 0;
+    padding: 12px 0;
+    position: relative;
 }
 
-/* ----- Карточка отзыва ----- */
+/* ===================== КАРТОЧКА ===================== */
 .review {
     display: flex;
     align-items: flex-start;
 
-    background: rgba(255, 255, 255, 0.72);
-    border-radius: 14px;
-    padding: 22px;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+    padding: 24px;
 
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 
-    transition: 
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        background 0.35s ease;
+    transform: translateY(0);
+    opacity: 1;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        background 0.3s ease,
+        box-shadow 0.35s ease;
 }
 
 .review:hover {
     transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.88);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26);
 }
 
-/* Фото */
+/* ===================== АНИМАЦИЯ ПОЯВЛЕНИЯ ===================== */
+.review--hidden {
+    opacity: 0;
+    transform: translateY(22px);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* скрытые по умолчанию (JS их открывает) */
+.hidden {
+    display: none !important;
+}
+
+/* ===================== АВАТАР ===================== */
 .review__img {
     width: 74px;
     height: 74px;
@@ -44,12 +64,18 @@
     border-radius: 50%;
     object-fit: cover;
 
-    margin-right: 20px;
+    margin-right: 22px;
+    flex-shrink: 0;
 
-    box-shadow: 0 5px 16px rgba(0,0,0,0.22);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    transition: transform 0.35s ease;
 }
 
-/* Контент */
+.review__img:hover {
+    transform: scale(1.06);
+}
+
+/* ===================== КОНТЕНТ ===================== */
 .review__content {
     flex: 1;
     display: flex;
@@ -60,7 +86,6 @@
 .review__name {
     font-family: "Open Sans 700";
     font-size: 20px;
-
     color: var(--color-basic-1);
     margin-bottom: 4px;
 }
@@ -68,69 +93,65 @@
 /* Дата */
 .review__date {
     font-size: 14px;
-    color: #867c5c;
-    opacity: 0.8;
+    color: #8b825f;
+    opacity: 0.75;
 }
 
 /* Текст */
 .review__text {
-    margin-top: 12px;
+    margin-top: 14px;
     font-size: 16px;
-    line-height: 1.45;
+    line-height: 1.5;
 
-    color: #3b3a38;
+    color: #3d3a34;
     opacity: 0.93;
 }
 
-/* скрытые отзывы */
-.hidden {
-    display: none !important;
-}
-
-/* ----- Кнопка “Показать ещё” ----- */
+/* ===================== КНОПКА ===================== */
 .reviews__btn {
-    margin: 32px auto 0;
+    margin: 38px auto 0;
     display: block;
 
-    padding: 14px 34px;
-    font-size: 17px;
+    padding: 16px 36px;
+    font-size: 18px;
 
     background: linear-gradient(
         135deg,
         var(--color-basic-2) 0%,
-        rgba(255, 215, 90, 1) 100%
+        rgba(255, 215, 120, 1) 100%
     );
 
-    color: #402f00;
+    color: #3a2a00;
     font-family: "Open Sans 700";
 
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
 
     box-shadow: 0 8px 20px rgba(208,166,22,0.45);
-    transition: 0.25s ease;
+    transition: 0.28s ease;
 }
 
 .reviews__btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(208,166,22,0.55);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(208,166,22,0.55);
     background: linear-gradient(
         135deg,
-        rgba(255, 210, 70, 1) 0%,
-        rgba(255, 225, 130, 1) 100%
+        rgba(255, 205, 70, 1) 0%,
+        rgba(255, 225, 145, 1) 100%
     );
 }
 
-/* ----- Адаптив ----- */
-
+/* ===================== АДАПТИВ ===================== */
 @media (max-width: 600px) {
     .review {
-        padding: 16px;
+        padding: 18px;
+        border-radius: 14px;
     }
 
     .review__img {
         width: 60px;
         height: 60px;
+        margin-right: 16px;
     }
 
     .review__name {
@@ -139,5 +160,10 @@
 
     .review__text {
         font-size: 15px;
+    }
+
+    .reviews__btn {
+        font-size: 16px;
+        padding: 12px 28px;
     }
 }

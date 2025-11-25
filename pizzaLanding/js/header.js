@@ -1,64 +1,93 @@
-// переменные
-const mainHeader = document.querySelector('.js-body__header');
-const hamburger = document.querySelector('.js-hamburger');
-const navList = document.querySelector('.js-nav-list');
-const navListItems = document.querySelectorAll('.js-nav-list__item');
+// ======================================================================
+// HEADER — премиальный, оптимизированный, улучшенный
+// ======================================================================
 
-// scroll вспомогательные переменные
+// Элементы
+const mainHeader = document.querySelector(".js-body__header");
+const hamburger = document.querySelector(".js-hamburger");
+const navList = document.querySelector(".js-nav-list");
+const navListItems = document.querySelectorAll(".js-nav-list__item");
+
+// Настройки
+const OFFSET_HIDE = 200;
+const ADAPTIVE_WIDTH = 1000;
+
+// Переменные состояния
 let lastScroll = 0;
-const defaultOffset = 200;
-const adaptiveWidth = 1000;
+let menuOpen = false;
 
-// функции
-const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
-const isAdaptive = () => document.documentElement.clientWidth <= adaptiveWidth;
-const containHide = () => mainHeader.classList.contains("body__header_hided");
-const isNavListHided = () => navList.classList.contains("nav-list_hided");
-const isHamburgerActive = () => hamburger.classList.contains("hamburger_active");
+// Хэлперы
+const scrollY = () => window.pageYOffset || document.documentElement.scrollTop;
+const isAdaptive = () => window.innerWidth <= ADAPTIVE_WIDTH;
+
+// ----------------------------------------------------------------------
+// Функции меню
+// ----------------------------------------------------------------------
 
 function openMenu() {
-  hamburger.classList.add("hamburger_active");
-  navList.classList.remove("nav-list_hided");
+    menuOpen = true;
+    hamburger.classList.add("hamburger_active");
+    navList.classList.remove("nav-list_hided");
 }
 
 function closeMenu() {
-  hamburger.classList.remove("hamburger_active");
-  navList.classList.add("nav-list_hided");
+    menuOpen = false;
+    hamburger.classList.remove("hamburger_active");
+    navList.classList.add("nav-list_hided");
 }
 
-// скрытие хедера при скролле
+function toggleMenu() {
+    menuOpen ? closeMenu() : openMenu();
+}
+
+// ----------------------------------------------------------------------
+// Скрытие хедера при скролле
+// ----------------------------------------------------------------------
+
 window.addEventListener("scroll", () => {
-  if (
-    scrollPosition() > lastScroll &&
-    !containHide() &&
-    scrollPosition() > defaultOffset &&
-    isAdaptive() &&
-    !isHamburgerActive()
-  ) {
-    mainHeader.classList.add("body__header_hided");
-  } 
-  else if (scrollPosition() < lastScroll && containHide()) {
-    mainHeader.classList.remove("body__header_hided");
-  }
+    const current = scrollY();
 
-  lastScroll = scrollPosition();
-});
+    // Скрываем хедер только на адаптиве и только когда меню закрыто
+    if (isAdaptive() && !menuOpen) {
 
-// клик по бургеру
-hamburger.addEventListener("click", () => {
-  if (!isHamburgerActive() && isAdaptive() && isNavListHided()) {
-    openMenu();
-  }
-  else if (isHamburgerActive() && isAdaptive() && !isNavListHided()) {
-    closeMenu();
-  }
-});
+        // скролл вниз — скрыть
+        if (current > lastScroll && current > OFFSET_HIDE) {
+            mainHeader.classList.add("body__header_hided");
+        }
+        // скролл вверх — показать
+        else if (current < lastScroll) {
+            mainHeader.classList.remove("body__header_hided");
+        }
 
-// закрытие меню при клике по пункту
-navListItems.forEach(navItem => {
-  navItem.addEventListener("click", () => {
-    if (isAdaptive()) {
-      closeMenu();
     }
-  });
+
+    lastScroll = current;
+});
+
+// ----------------------------------------------------------------------
+// Клик по бургеру
+// ----------------------------------------------------------------------
+
+hamburger.addEventListener("click", () => {
+    if (isAdaptive()) toggleMenu();
+});
+
+// ----------------------------------------------------------------------
+// Закрытие меню при клике по пункту
+// ----------------------------------------------------------------------
+
+navListItems.forEach(item => {
+    item.addEventListener("click", () => {
+        if (isAdaptive()) closeMenu();
+    });
+});
+
+// ----------------------------------------------------------------------
+// Автоматическое закрытие меню при ресайзе
+// ----------------------------------------------------------------------
+
+window.addEventListener("resize", () => {
+    if (!isAdaptive()) {
+        closeMenu();  // если выйти на ПК — меню должно быть закрыто
+    }
 });

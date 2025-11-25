@@ -222,27 +222,39 @@
 
       <!-- interior -->
       <section id="interior" class="main__section interior">
-        <div class="main__section-container main__section-container_reverse container">
+        <!-- block -->
+<div class="main__section-block collage">
 
-
-          <header class="main__section-header">
-            <h2 class="main__section-header-text">Интерьер</h2>
-            <p class="main__section-text">
-              При входе к нам вы просто упадете!<br>Мы не заделали дыру в полу под порогом
-            </p>
-          </header>
-
-          <div class="main__section-block">
-
-  <div class="interior__gallery">
-
-    <img src="img/interior-1.jpg" alt="Интерьер" class="interior__img">
-    <img src="img/interior-2.jpg" alt="Интерьер" class="interior__img">
-    <img src="img/interior-3.jpg" alt="Интерьер" class="interior__img">
-
+  <!-- 1. Основное увеличенное фото -->
+  <div class="collage__view-box collage-item shadow-out">
+    <img
+      class="js-collage__view-box-img collage__view-box-img collage-item__img"
+      src="img/interior/interior-1.png"
+      alt="Наш прекрасный ресторан до реставрации"
+    >
   </div>
 
+  <!-- 2. Описание выбранного фото -->
+  <div class="collage__view-textbox collage-item shadow-out">
+    <p class="js-collage__view-text collage__view-text collage-item__text">
+      Наш прекрасный ресторан до реставрации
+    </p>
+  </div>
+
+  <!-- 3. Текст “и другие наши фото” -->
+  <div class="collage__alt-textbox collage-item shadow-out">
+    <p class="collage__alt-text collage-item__text">
+      И другие <br class="collage-item__br"> Наши фото:
+    </p>
+  </div>
+
+  <!-- 4. Список миниатюр (JS сюда подставит элементы) -->
+  <ul class="js-collage__collage-items-list collage__collage-items-list">
+    <!-- миниатюры создаёт JS -->
+  </ul>
+
 </div>
+
 
       </section>
 

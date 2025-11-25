@@ -3,6 +3,11 @@
    ====================================================================== */
 
 /* Сетка */
+
+.interior {
+  background-color: var(--color-basic-4);
+}
+
 .interior__gallery {
     margin-top: 40px;
     display: grid;
