@@ -25,7 +25,6 @@
   <script src="js/collage.js" defer></script>
   <script src="js/menu.js" defer></script>
   <script src="js/header.js" defer></script>
-  <script src="js/reviews.js" defer></script>
   <script src="js/scroll-animations.js" defer></script>
 
 </head>
@@ -258,7 +257,7 @@
 
       </section>
 
-      <!-- reviews -->
+            <!-- reviews -->
       <section id="reviews" class="main__section reviews">
         <div class="main__section-container container">
 
@@ -267,101 +266,25 @@
             <p class="main__section-text">Наши клиенты – лучшие... И их отзывы – прекрасны!</p>
           </header>
 
-          <div class="main__section-block">
+          <div class="main__section-block reviews__slider">
 
-  <div class="reviews__list">
+            <!-- Линия слайдера — сюда JS вставит отзывы -->
+            <div class="js-reviews__sliderLine reviews__sliderLine">
+            </div>
 
-    <!-- 1 -->
-    <div class="review">
-      <img src="img/rev-1.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Анна</h3>
-        <span class="review__date">12.02.2024</span>
-        <p class="review__text">Очень вкусная пицца! Буду заказывать ещё ❤️</p>
-      </div>
-    </div>
+            <!-- Кнопка "назад" -->
+            <button class="js-slider-btn-prev reviews__button reviews__button_prev shadow-out" type="button">
+              <span class="reviews__button-icon material-symbols-outlined">line_start_arrow_notch</span>
+            </button>
 
-    <!-- 2 -->
-    <div class="review">
-      <img src="img/rev-2.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Егор</h3>
-        <span class="review__date">03.03.2024</span>
-        <p class="review__text">Доставка быстрая, всё горячее, отменная Маргарита.</p>
-      </div>
-    </div>
+            <!-- Кнопка "вперёд" -->
+            <button class="js-slider-btn-next reviews__button reviews__button_next shadow-out" type="button">
+              <span class="reviews__button-icon material-symbols-outlined">line_end_arrow_notch</span>
+            </button>
 
-    <!-- 3 -->
-    <div class="review">
-      <img src="img/rev-3.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Мария</h3>
-        <span class="review__date">28.02.2024</span>
-        <p class="review__text">Интерьер шикарный, атмосфера топ!</p>
-      </div>
-    </div>
+          </div>
 
-    <!-- Остальные 6 отзывов — скрытые при загрузке -->
-    <div class="review hidden">
-      <img src="img/rev-4.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Иван</h3>
-        <span class="review__date">10.01.2024</span>
-        <p class="review__text">Сырная пицца просто бомба! Всем советую.</p>
-      </div>
-    </div>
-
-    <div class="review hidden">
-      <img src="img/rev-5.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Света</h3>
-        <span class="review__date">14.03.2024</span>
-        <p class="review__text">Очень вежливые официанты и уютный зал.</p>
-      </div>
-    </div>
-
-    <div class="review hidden">
-      <img src="img/rev-6.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Фёдор</h3>
-        <span class="review__date">07.03.2024</span>
-        <p class="review__text">Пицца огромная и вкусная, цена вообще огонь.</p>
-      </div>
-    </div>
-
-    <div class="review hidden">
-      <img src="img/rev-7.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Катя</h3>
-        <span class="review__date">05.03.2024</span>
-        <p class="review__text">Быстрая доставка и приятные цены!</p>
-      </div>
-    </div>
-
-    <div class="review hidden">
-      <img src="img/rev-8.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Олег</h3>
-        <span class="review__date">22.02.2024</span>
-        <p class="review__text">Лучшая пицца в городе, честно!</p>
-      </div>
-    </div>
-
-    <div class="review hidden">
-      <img src="img/rev-9.jpg" class="review__img" alt="">
-      <div class="review__content">
-        <h3 class="review__name">Натали</h3>
-        <span class="review__date">01.03.2024</span>
-        <p class="review__text">Просто вау. Рекомендую каждому!</p>
-      </div>
-    </div>
-
-  </div>
-
-  <button id="reviews__toggle" class="reviews__btn">Показать ещё</button>
-
-</div>
-
+        </div>
       </section>
 
       <!-- reservation -->

@@ -26,6 +26,7 @@
 @import "blocks/collage.css";
 @import "blocks/menu.css";
 @import "blocks/menu-item.css";
+@import "blocks/review-item.css";
 
 /* секции (из css/blocks/sections/) */
 @import "blocks/sections/cover.css";
