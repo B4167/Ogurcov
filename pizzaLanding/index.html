@@ -312,40 +312,58 @@
       Мы свяжемся с вами в течение 2 минут ❤️
     </p>
 
-    <form class="reservation__form">
+<form class="reservation__form"
+      method="POST"
+      action="https://formspree.io/f/xpwgpygb">
 
-      <div class="reservation__field">
-        <label>Ваше имя</label>
-        <input type="text" placeholder="Например: Антон" required>
-      </div>
+  <div class="reservation__field">
+    <label>Ваше имя</label>
+    <input type="text" 
+           name="clientName"
+           placeholder="Например: Антон" 
+           required>
+  </div>
 
-      <div class="reservation__field">
-        <label>Телефон</label>
-        <input type="tel" placeholder="+7 999 123 45 67" required>
-      </div>
+  <div class="reservation__field">
+    <label>Телефон</label>
+    <input type="tel" 
+           name="clientPhone"
+           placeholder="+7 916 358 64 97"
+           pattern="^\+?[0-9\s\-\(\)]{10,20}$"
+           required>
+  </div>
 
-      <div class="reservation__row">
-        <div class="reservation__field">
-          <label>Дата</label>
-          <input type="date" required>
-        </div>
+  <div class="reservation__row">
+    <div class="reservation__field">
+      <label>Дата</label>
+      <input type="date" name="date" required>
+    </div>
 
-        <div class="reservation__field">
-          <label>Время</label>
-          <input type="time" required>
-        </div>
-      </div>
+    <div class="reservation__field">
+      <label>Время</label>
+      <input type="time" name="time" required>
+    </div>
+  </div>
 
-      <div class="reservation__field">
-        <label>Количество гостей</label>
-        <input type="number" min="1" max="20" placeholder="2" required>
-      </div>
+  <div class="reservation__field">
+    <label>Количество гостей</label>
+    <input type="number" 
+           name="guests" 
+           min="1" max="20" 
+           placeholder="2" 
+           required>
+  </div>
 
-      <button class="reservation__btn" type="submit">
-        Забронировать
-      </button>
+  <button class="reservation__btn" type="submit">
+    Забронировать
+  </button>
 
-    </form>
+  <p class="form__success-message" hidden>
+    Бронирование успешно отправлено! Мы свяжемся с вами в ближайшее время ❤️
+  </p>
+
+</form>
+
 
   </div>
 </div>
@@ -353,6 +371,29 @@
       </section>
 
     </main>
-  
+    
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".reservation__form");
+  const msg = document.querySelector(".form__success-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      msg.hidden = false;
+      form.reset();
+      setTimeout(() => msg.hidden = true, 4000);
+    }
+  });
+});
+</script>
+
   </body>
 </html>
